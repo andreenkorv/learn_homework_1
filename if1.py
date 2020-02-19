@@ -14,12 +14,35 @@
 
 """
 
+def get_age(age=-1):
+    while age < 0:
+        try:
+            age = int(input("Введите возраст: "))
+        except ValueError:
+            print("Введите простое число")
+    return age
+
+def get_job(age):
+    if age < 6:
+        job = "Детский сад"
+    elif age < 18:
+        job = "Школа"  
+    elif age < 23:
+        job = "ВУЗ"
+    else:
+        job = "Работать!"
+    return job
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
-
+    age = get_age()
+    job = get_job(age)
+    print(job)
+    
+      
 if __name__ == "__main__":
     main()
+
