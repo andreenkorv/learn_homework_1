@@ -58,6 +58,18 @@ def print_medium_raiting(student):
     return 0
 
 
+def print_medium_raiting2(student):
+    sum_all = []
+    [
+        [
+            print(f'Класс: {dictionary.get("School class")}',
+            f'средний бал: {round(sum(dictionary.get("scores"))/len(dictionary.get("scores")), 2)}'),
+            sum_all.append(sum(dictionary.get("scores"))/len(dictionary.get("scores")))
+            ] for dictionary in student
+            ]
+    print(f'Средний бал по школе: {round(sum(sum_all)/len(sum_all), 2)}')
+
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
@@ -68,11 +80,12 @@ def main():
                 {'School class': '2a', 'scores': [4, 5, 2, 3, 4, 2, 5]},
                 {'School class': '3a', 'scores': [5, 2, 3, 3, 4, 2, 5, 4, 2]}
                 ]
-    print_medium_raiting(student)
     num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     print_increment_list(num_list)
     string = "Строка"
     print_string(string)
+    print_medium_raiting(student)
+    print_medium_raiting2(student)
 
 
 if __name__ == "__main__":
